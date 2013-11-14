@@ -1,0 +1,107 @@
+body {
+	background:#fff;
+	margin:20px;
+	padding:0;
+	font-family:Helvetica, Arial, Verdana;
+}
+
+#wrapper {
+	width:800px;
+	margin:0 auto;
+	padding:0;
+}
+
+/*========= text ========*/
+
+h1 {
+	font-size:22pt;
+	color:#888;
+	margin:0 0 10px 0;
+}
+
+/*====== slider nav ======*/
+
+#slide_nav {
+	margin:0 0 20px 0;
+	padding:0;
+	min-height:40px;
+}
+
+#slide_nav li {
+	font-size:10pt;
+	color:#000;
+	list-style:none;
+	float:left;
+	padding: 5px 15px;
+	cursor: pointer; /* makes the cursor into the mickey mouse hand to indicate its clickable */
+}
+
+.selected { /* styles the currently selected nav item */
+	background:rgba(255,0,0,.5);
+}
+
+/*========= slider container parts ========*/
+
+#slide_frame { /* the frame window that hides all content outside the slider frame */
+	width:800px;
+	height:500px;
+	overflow: hidden; /* hides all the overflowing content of slide_block */
+	position: relative; /*helps stupid old IE*/
+}
+
+#slide_block{ /* the entire block that equals the full width of all units inside */
+	/* width will be set via jQuery depending on number of gallery links added */
+	position:relative; /*helps stupid old IE*/
+}
+
+.slide_unit { /* the individual units inside the slider */
+	width:800px;
+	height:500px;
+	float:left;
+}
+
+/*========= clicker ========*/
+
+#clicker_f {
+	float:right;
+	width:20px;
+	height:27px;
+	position: relative;
+	z-index:1;
+	margin:0 20px 0 0;
+	bottom:264px;
+}
+
+#clicker_f a:link, #clicker_f a:visited {
+	display:block;
+	width:20px;
+	height:27px;
+	background: url(../images/arrows.png) no-repeat -20px -27px;
+	border:0;
+	text-decoration:none;
+}
+
+#clicker_f a:hover, #clicker_f a:active {
+	background-position: -20px 0;
+}
+
+#clicker_r {
+	width:20px;
+	height:27px;
+	position: relative;
+	z-index:1;
+	margin:0 0 0 20px;
+	bottom:264px;
+}
+#clicker_r a:link, #clicker_r a:visited {
+	display:block;
+	width:20px;
+	height:27px;
+	background: url(../images/arrows.png) no-repeat 0 -27px;
+	text-decoration:none;
+	border:0;
+}
+
+#clicker_r a:hover, #clicker_r a:active {
+	background-position: 0 0;
+}
