@@ -8,4 +8,4 @@ JavaScript source files, slides, labs, etc, etc.
 1. Clone this locally
 2. You done son!
 
-I will be updating this adding new content. Just fetch and merge to get newest content.
+I will be updating this with new content occasionally. Just fetch and merge to get newest content.
