@@ -1,0 +1,15 @@
+body {
+	font: 14px Arial,sans-serif;
+}
+label {
+	display: block;
+}
+input {
+	padding: 5px;
+}
+.pos {
+    color: green;
+}
+.neg {
+    color: gray;
+}

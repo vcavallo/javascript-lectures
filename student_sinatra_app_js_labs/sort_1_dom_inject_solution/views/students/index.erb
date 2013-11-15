@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>JavaScript Sort Lab 1</title>
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="/js/lib/modernizr.js"></script>
+		<script src="/js/lib/jquery.min.js"></script>
+		<script src="/js/index_captions.js"></script>
+		<script src="/js/sort.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header class="clearfix">
+				<h1>Students @ Flatiron School</h1>
+				<!-- SORT MENU -->
+			  	<div id="sort_menu">
+				     <select>
+				    	<option value="" selected>---sort by---</option>
+				    	<option value="alpha">Alphabetical</option>
+				    	<option value="most">Most to Say</option>
+				    	<option value="least">Least to Say</option>
+				    	<option value="id">Student ID</option>
+				    </select>
+			  </div><!-- #sort_menu -->
+			</header>
+			<!-- STUDENTS -->
+			<section id="students" class="clearfix">
+				<% @students.each do |student| %>
+					<div class="student" data-student-id="<%= student.id %>">
+						<a href="/students/<%= student.id %>">
+							<img class="avatar" src="<%= student.avatar %>" alt="<%= student.name %>">
+						</a>
+						<a href="/students/<%= student.id %>">
+							<h2 class="name"><%= student.name %></h2>
+						</a>
+						<p class="position"><%= student.position %></p>
+						<div class="ballon_caption">
+							<span class="tail"></span>
+							<span class="quote"><%= student.quote %></span>
+						</div>
+						<p class="display_sites">
+							<% student.sites.each do |site| %>
+								<a class="site" href="<%= site.url %>"><%= site.url %></a>
+							<% end %>
+						</p>
+					</div>
+				<% end %>
+			</section><!-- #students -->
+		</div><!-- #wrapper -->
+	</body>
+</html>

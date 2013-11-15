@@ -10,6 +10,9 @@ $(document).ready(function(){
 	});
 		
 	//show
+	$("#b2").click(function(){
+		$("#p1").show(1000);
+	});
 	
 			
 	//toggle

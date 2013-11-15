@@ -1,0 +1,288 @@
+/*********
+ * Fixes *
+ *********/
+
+*, html, body, div, header, footer, section, aside, figure, figcaption, h1, h2, h3, h4, h5, h6, p, blockquote {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
+/*****************
+ * Global Styles *
+ *****************/
+
+body {
+	background: #efefef;
+}
+
+h1 {
+	color: #ccc;
+	font: 28px Georgia, serif;
+	text-align: center;
+}
+
+h2 {
+	color: #000;
+	font-size: 22px;
+	font-weight: normal;
+	margin: 0 0 2px;
+}
+
+p {
+	font-size: 14px;
+	color: #333;
+	margin: 0 0 5px;
+}
+
+input, textarea {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	display: block;
+	margin: 3px 0 10px;
+	padding: 2px;
+	width: 100%;
+}
+
+input[type="submit"] {
+	width: 100px;
+}
+
+input[type="submit"]:hover {
+	background: #666;
+}
+
+label {
+	color: #777;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+   color: #ccc;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+/**********
+ * Layout *
+ **********/
+
+#wrapper {
+	margin: 0 auto;
+	width: 960px;
+}
+
+/**********
+ * Header *
+ **********/
+
+	header {
+		border-bottom: 2px dotted #ccc;
+	}
+
+/*************
+ * search *
+ *************/
+
+	#search {
+ 		display: none; /* hide unless JS exists, otherwise use JS to show */
+		float: left;
+		margin-bottom: 10px;
+		width: 300px;
+	}
+
+		#search label, #search input {
+			display: inline;
+			width: 50%;
+		}
+
+/*************
+ * Sort Menu *
+ *************/
+
+	#sort_menu {
+		display: none; /* hide unless JS exists, otherwise use JS to show */
+		float: right;
+		margin-bottom: 10px;
+	}
+
+/****************
+ * Student List *
+ ****************/
+
+	#students {
+		padding: 20px;
+	}
+
+		.student {
+			float: left;
+			width: 33.3%;
+			padding: 10px;
+			position: relative; /* for controlling caption position within */
+		}
+
+			.avatar {
+				height: auto;
+				width: 80px;
+				border: 1px solid #ccc;
+			}
+
+			.position {
+				color: #777;
+				font-family: Georgia, serif;
+				font-size: 14px;
+				font-style: italic;
+				font-weight: lighter;
+				margin: 0 0 15px;
+			}
+
+			.site {
+				display: block;
+				color: #555;
+				font-size: 12px;
+			}
+
+			.edit {
+				color: blue;
+				font: 12px arial, sans-serif;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+			.edit:hover {
+				color: orange;
+			}
+
+			/* captions */
+
+			.ballon_caption {
+				background: url(../images/caption_tail.png) no-repeat bottom left;
+				display: none; 
+				position: absolute;
+				text-align: right;
+				top: 0;
+				right: 0;
+				width: 240px;
+			}
+
+				.ballon_caption .quote {
+					background: #fff;
+					border-radius: 10px;
+					-moz-webkit-border-radius: 10px;
+					-webkit-border-radius: 10px;
+					display: inline-block;
+					padding: 10px;
+					text-align: left;
+					width: 210px;
+				}
+
+/*************
+ * Edit Form *
+ *************/
+
+ 	#blanket {
+ 		background: rgba(0,0,0,.5);
+ 		display: none; /* hide initially if Javascript is disabled */ 
+ 		height: 100%;
+ 		left: 0;
+ 		min-width: 100%;
+ 		min-height: 100%;
+ 		position: absolute;
+ 		top: 0;
+ 		width: 100%;
+ 		z-index: 100;
+ 	}
+
+	#edit_box {
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		box-shadow: 0 5px 10px #333;
+		float: right; /* sets to float: none if JS exists */
+		min-width: 200px;
+		padding: 10px 30px 30px;
+		width: 66.7%;
+	}
+
+		/* Load this class when JS & jQuery exist (graceful degradation) */
+		.edit_box_js_active {
+			display: none;
+			float: none;
+			position: absolute;
+			top: 10%;
+			left: 33.333%;
+			width: 33.333% !important; /* use important to override the #edit_box width which has more authority */
+			z-index: 200;
+		}
+
+	.close {
+		color: #ccc;
+		float: right;
+		margin: 10px 0 10px;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.close:hover {
+		color: red;
+	}
+
+	#edit_box form {
+		clear: both;
+	}
+
+	.f_sites {
+		display: inline;
+		margin-right: 10px;
+		width: 50%;
+	} 
+
+	.error {
+		color: red;
+		font: 12px Arial, sans-serif;
+	}
+
+	#close_modal {
+		display: none; /* hide when JavaScript is disabled */
+	}
+
+/*****************
+ * Personal Page *
+ *****************/
+
+ 	.big_avatar {
+ 		width: 200px;
+ 	}
+
+ 	.block_caption {
+ 		overflow: hidden;
+ 	}
+
+	 	.block_caption .quote {
+	 		position: relative;
+	 		width: auto;
+	 	}
+
+		/* Load this class when JS & jQuery exist (graceful degradation) */
+	 	.quote_js_active {
+	 		padding: 10px;
+			background: rgba(255,255,255,.8);
+	 	}
