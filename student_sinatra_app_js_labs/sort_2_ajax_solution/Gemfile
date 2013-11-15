@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'sqlite3'
+gem 'sequel'
+gem 'sinatra', require: 'sinatra/base'
+gem 'sinatra-contrib', require: false
+gem 'rake'
+gem 'json'
+gem 'pry'

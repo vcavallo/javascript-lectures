@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>JavaScript Sort Lab 1</title>
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="/js/lib/modernizr.js"></script>
+		<script src="/js/lib/jquery.min.js"></script>
+		<script src="/js/show_captions.js"></script>
+		<script src="/js/modal_form.js"></script>
+	</head>
+	<body>
+		<div id="blanket"></div><!-- modal underlay -->
+		<div id="wrapper">
+			<header class="clearfix">
+				<h1>Students @ Flatiron School</h1>
+			</header>
+			<!-- STUDENT -->
+			<section id="students" class="clearfix">
+				<p><a href="/students">go back</a></p>
+				<div class="student" data-student-id="<%= @student.id %>">
+					<div class="block_caption">
+						<img class="big_avatar" src="<%= @student.avatar %>" alt="<%= @student.name %>">
+						<p class="quote"><%= @student.quote %></p>
+					</div>
+					<h2 class="name"><%= @student.name %></h2>
+					<p class="position"><%= @student.position %></p>
+					<p class="display_sites">
+						<% @student.sites.each do |site| %>
+							<a class="site" href="<%= site.url %>"><%= site.url %></a>
+						<% end %>
+					</p>
+					<span id="open_modal" class="edit">edit</span>
+				</div><!-- #student -->
+				<!-- EDIT FORM -->
+				<div id="edit_box">
+					<span id="close_modal" class="close">x</span>
+					<form action="/students/" method="post">
+						<label for="f_name">Name</label>
+						<input type="text" id="f_name" name="name" placeholder="full name">
+						<label for="f_position">Title</label>
+						<textarea id="f_position" name="position" id="position" rows="4" placeholder="your title (position)"></textarea>
+						<label for="f_quote">Quote</label>
+						<textarea id="f_quote" name="quote" id="quote" rows="4" placeholder="favorite quote"></textarea>
+						<label for="sites">Personal Site(s)</label>
+						<div id="sites"></div>
+						<span id="add_sites" class="edit">add more personal sites</span>
+						<input type="submit" value="update">
+					</form>
+				</div><!-- edit_box -->
+			</section><!-- #students -->
+		</div><!-- #wrapper -->
+	</body>
+</html>

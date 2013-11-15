@@ -5,6 +5,8 @@ $(document).ready(function(){
 //See: http://api.jquery.com/category/selectors/
 //See: http://api.jquery.com/css/
 
+  $('p').addClass('highlight');
+
 	
 					
 });

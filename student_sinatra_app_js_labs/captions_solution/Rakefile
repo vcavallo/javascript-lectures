@@ -1,0 +1,50 @@
+require 'rubygems'
+require 'rake'
+require './environment.rb'
+
+namespace :db do
+  desc 'Add some default students to the db'
+  task :seed do
+    student1 = Student.create(name: 'Christina Chang',
+                  position: 'Environmentalist',
+                  quote: 'Born and raised in NYC.',
+                  avatar: '/images/christinachang.jpg')
+    ['http://facebook.com/'].each do |site|
+      Site.create(student_id: student1.id, url: site)
+    end
+
+    student2 = Student.create(name: 'Harrison Wang',
+                  position: 'Coder',
+                  quote: 'From NYC to LA. Where the code goes I follow.',
+                  avatar: '/images/harrison.jpg')
+    ['http://github.com/', 'http://foobar.com/'].each do |site|
+      Site.create(student_id: student2.id, url: site)
+    end
+
+    student3 = Student.create(name: 'Alex Gorski',
+                  position: 'Former investigator',
+                  quote: 'Better late than never... but better to never be late!',
+                  avatar: '/images/alexgorski_thumb.jpg')
+
+    ['http://lambda.com/', 'http://go.com/', 'http://supsup.com'].each do |site|
+      Site.create(student_id: student3.id, url: site)
+    end
+  end
+
+  desc 'Delete all Students from the database'
+  task :reset do
+    Student.all.destroy
+  end
+
+  desc 'create the artist database structure'
+  task :migrate do
+    ::Sequel.extension :migration
+    Sequel::Migrator.run DB, 'db/migrate'
+    puts '<= db:migrate executed'
+  end
+end
+
+desc 'Open an pry session preloaded with this library'
+task :console do
+  sh 'pry -r ./environment'
+end
