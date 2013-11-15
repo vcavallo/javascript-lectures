@@ -6,3 +6,83 @@ Hints:
 3.) Learn how to select specific inputs using eq selectors: http://api.jquery.com/eq-selector/
 
 */
+$(document).ready(function() {
+
+    $('#addition').change(function(){
+        var x;
+        var y;
+        var z;
+        
+        x = $(this).find('input:eq(0)').val();
+        y = $(this).find('input:eq(1)').val();
+
+        x = parseFloat(x);
+        y = parseFloat(y);
+        z = x + y;
+
+        $(this).find('input:eq(2)').val(z);
+    });
+
+    $('#subtraction').change(function(){
+        var x;
+        var y;
+        var z;
+        
+        x = $(this).find('input:eq(0)').val();
+        y = $(this).find('input:eq(1)').val();
+
+        x = parseFloat(x);
+        y = parseFloat(y);
+        z = x - y;
+
+        $(this).find('input:eq(2)').val(z);
+    });
+
+    $('#division').change(function(){
+        var x;
+        var y;
+        var z;
+        
+        x = $(this).find('input:eq(0)').val();
+        y = $(this).find('input:eq(1)').val();
+
+        x = parseFloat(x);
+        y = parseFloat(y);
+        z = x / y;
+
+        $(this).find('input:eq(2)').val(z);
+    });
+
+    $('#multiplication').change(function(){
+        var x;
+        var y;
+        var z;
+        
+        x = $(this).find('input:eq(0)').val();
+        y = $(this).find('input:eq(1)').val();
+
+        x = parseFloat(x);
+        y = parseFloat(y);
+        z = x * y;
+
+        $(this).find('input:eq(2)').val(z);
+    });
+
+    $('#modulus').change(function(){
+        var x;
+        var y;
+        var z;
+        
+        x = $(this).find('input:eq(0)').val();
+        y = $(this).find('input:eq(1)').val();
+
+        x = parseFloat(x);
+        y = parseFloat(y);
+        z = x % y;
+
+        $(this).find('input:eq(2)').val(z);
+    });
+
+
+
+});
